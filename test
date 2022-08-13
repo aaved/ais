@@ -28,12 +28,20 @@ main_packages=(
     'xsettingsd'
 )
 
+
+
 install_package() {
     sudo pacman -S "${main_packages[@]}"
 }	
 
+bspwm_directories() {
+    echo "done"
+	echo "works" 
+}	
+
 main() {
     install_package
+	bspwm_directories
 }
 
 main
