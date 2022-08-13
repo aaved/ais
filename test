@@ -3,7 +3,6 @@
 main_packages=(
     'alacritty'
     'amd-ucode'
-    'base-devel'
     'bspwm'
     'btop'
     'discord'
