@@ -4,7 +4,7 @@ main_packages=(
     'alacritty'
     'amd-ucode'
     'bspwm'
-    'btop'
+    'htop'
     'discord'
     'feh'
     'firefox'
@@ -35,13 +35,22 @@ install_package() {
 }	
 
 bspwm_directories() {
-    echo "done"
-    echo "works" 
+    mkdir .config/bspwm
+	mkdir .config/bspwm
 }	
+
+bspwm_copy_rc() {
+    cp /usr/share/doc/bspwm/examples/bspwmrc .config/bspwm/
+    cp /usr/share/doc/bspwm/examples/sxhkdrc .config/sxhkd/
+    cp /etc/X11/xinit/xinitrc .xinitrc
+}
+
+
 
 main() {
     install_package
 	bspwm_directories
+	bspwm_copy_rc
 }
 
 main
