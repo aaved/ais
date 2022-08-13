@@ -1,0 +1,40 @@
+#!/bin/bash
+
+main_packages=(
+    'alacritty'
+    'amd-ucode'
+    'base-devel'
+    'bspwm'
+    'btop'
+    'discord'
+    'feh'
+    'firefox'
+    'maim'
+    'micro'
+    'ntfs-3g'
+    'numlockx'
+	'polkit'
+    'sxhkd'
+    'thunar'
+    'ttf-jetbrains-mono'
+	'udiskie'
+	'xorg'
+	'xorg-xinit'
+    'xclip'
+    'xdg-user-dirs'
+    'xf86-video-nouveau'
+    'xfce4-settings'
+    'xorg-server'
+    'arandr'
+    'xsettingsd'
+)
+
+install_package() {
+    sudo pacman -S "${main_packages[@]}"
+}	
+
+main() {
+    install_package
+}
+
+main
