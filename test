@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 main_packages=(
     'alacritty'
@@ -28,29 +28,25 @@ main_packages=(
     'xsettingsd'
 )
 
-
-
 install_package() {
-    sudo pacman -S "${main_packages[@]}"
-}	
+    sudo pacman -S "${main_packages[@]}" --noconfirm
+}
 
 bspwm_directories() {
-    mkdir .config/bspwm
-	mkdir .config/bspwm
-}	
+    mkdir -p ~/.config/bspwm
+    mkdir -p ~/.config/bspwm
+}
 
 bspwm_copy_rc() {
-    cp /usr/share/doc/bspwm/examples/bspwmrc .config/bspwm/
-    cp /usr/share/doc/bspwm/examples/sxhkdrc .config/sxhkd/
+    cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
+    cp /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/
     cp /etc/X11/xinit/xinitrc .xinitrc
 }
 
-
-
 main() {
     install_package
-	bspwm_directories
-	bspwm_copy_rc
+    bspwm_directories
+    bspwm_copy_rc
 }
 
 main
